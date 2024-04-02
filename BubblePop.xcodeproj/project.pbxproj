@@ -14,6 +14,9 @@
 		CD6966582BBBC23200B082C4 /* BubblePopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966572BBBC23200B082C4 /* BubblePopTests.swift */; };
 		CD6966622BBBC23300B082C4 /* BubblePopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966612BBBC23300B082C4 /* BubblePopUITests.swift */; };
 		CD6966642BBBC23300B082C4 /* BubblePopUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966632BBBC23300B082C4 /* BubblePopUITestsLaunchTests.swift */; };
+		CD6966712BBBC5DF00B082C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966702BBBC5DF00B082C4 /* SettingsView.swift */; };
+		CD6966732BBBC60800B082C4 /* HighScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966722BBBC60800B082C4 /* HighScoreView.swift */; };
+		CD6966762BBBCA5E00B082C4 /* HighScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966752BBBCA5E00B082C4 /* HighScoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		CD69665D2BBBC23300B082C4 /* BubblePopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BubblePopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD6966612BBBC23300B082C4 /* BubblePopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblePopUITests.swift; sourceTree = "<group>"; };
 		CD6966632BBBC23300B082C4 /* BubblePopUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubblePopUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CD6966702BBBC5DF00B082C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		CD6966722BBBC60800B082C4 /* HighScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreView.swift; sourceTree = "<group>"; };
+		CD6966752BBBCA5E00B082C4 /* HighScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +100,11 @@
 		CD6966452BBBC23000B082C4 /* BubblePop */ = {
 			isa = PBXGroup;
 			children = (
+				CD6966742BBBC9E400B082C4 /* View */,
 				CD6966462BBBC23000B082C4 /* BubblePopApp.swift */,
-				CD6966482BBBC23000B082C4 /* ContentView.swift */,
 				CD69664A2BBBC23200B082C4 /* Assets.xcassets */,
 				CD69664C2BBBC23200B082C4 /* Preview Content */,
+				CD6966752BBBCA5E00B082C4 /* HighScoreViewModel.swift */,
 			);
 			path = BubblePop;
 			sourceTree = "<group>";
@@ -125,6 +132,16 @@
 				CD6966632BBBC23300B082C4 /* BubblePopUITestsLaunchTests.swift */,
 			);
 			path = BubblePopUITests;
+			sourceTree = "<group>";
+		};
+		CD6966742BBBC9E400B082C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD6966482BBBC23000B082C4 /* ContentView.swift */,
+				CD6966702BBBC5DF00B082C4 /* SettingsView.swift */,
+				CD6966722BBBC60800B082C4 /* HighScoreView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +274,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6966762BBBCA5E00B082C4 /* HighScoreViewModel.swift in Sources */,
+				CD6966712BBBC5DF00B082C4 /* SettingsView.swift in Sources */,
+				CD6966732BBBC60800B082C4 /* HighScoreView.swift in Sources */,
 				CD6966492BBBC23000B082C4 /* ContentView.swift in Sources */,
 				CD6966472BBBC23000B082C4 /* BubblePopApp.swift in Sources */,
 			);

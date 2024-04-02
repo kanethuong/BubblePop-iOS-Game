@@ -6,3 +6,6 @@
 //
 
 import Foundation
+class HighScoreViewModel:ObservableObject{
+    @Published var taskDescription:String=""
+}

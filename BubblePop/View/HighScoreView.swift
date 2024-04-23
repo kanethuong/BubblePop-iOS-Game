@@ -10,11 +10,14 @@ import SwiftUI
 struct HighScoreView: View {
     var body: some View {
         Label("High Score", systemImage: "")
-            .foregroundColor(.red)
-            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            .foregroundStyle(.red)
+            .font(.title)
+        
+        Spacer()
     }
 }
 
 #Preview {
     HighScoreView()
 }
+

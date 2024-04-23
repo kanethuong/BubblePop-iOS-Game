@@ -17,6 +17,9 @@
 		CD6966712BBBC5DF00B082C4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966702BBBC5DF00B082C4 /* SettingsView.swift */; };
 		CD6966732BBBC60800B082C4 /* HighScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966722BBBC60800B082C4 /* HighScoreView.swift */; };
 		CD6966762BBBCA5E00B082C4 /* HighScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966752BBBCA5E00B082C4 /* HighScoreViewModel.swift */; };
+		CD78759B2BD7856F0086775B /* BubbleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78759A2BD7856F0086775B /* BubbleModel.swift */; };
+		CD78759D2BD785930086775B /* HighScoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78759C2BD785930086775B /* HighScoreModel.swift */; };
+		CD78759F2BD786280086775B /* GamePropertiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD78759E2BD786280086775B /* GamePropertiesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		CD6966702BBBC5DF00B082C4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		CD6966722BBBC60800B082C4 /* HighScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreView.swift; sourceTree = "<group>"; };
 		CD6966752BBBCA5E00B082C4 /* HighScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewModel.swift; sourceTree = "<group>"; };
+		CD78759A2BD7856F0086775B /* BubbleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleModel.swift; sourceTree = "<group>"; };
+		CD78759C2BD785930086775B /* HighScoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreModel.swift; sourceTree = "<group>"; };
+		CD78759E2BD786280086775B /* GamePropertiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePropertiesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,8 @@
 		CD6966452BBBC23000B082C4 /* BubblePop */ = {
 			isa = PBXGroup;
 			children = (
+				CD7875992BD783020086775B /* Controller */,
+				CD7875982BD782FC0086775B /* Model */,
 				CD6966742BBBC9E400B082C4 /* View */,
 				CD6966462BBBC23000B082C4 /* BubblePopApp.swift */,
 				CD69664A2BBBC23200B082C4 /* Assets.xcassets */,
@@ -142,6 +150,23 @@
 				CD6966722BBBC60800B082C4 /* HighScoreView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CD7875982BD782FC0086775B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD78759A2BD7856F0086775B /* BubbleModel.swift */,
+				CD78759C2BD785930086775B /* HighScoreModel.swift */,
+				CD78759E2BD786280086775B /* GamePropertiesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD7875992BD783020086775B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +301,12 @@
 			files = (
 				CD6966762BBBCA5E00B082C4 /* HighScoreViewModel.swift in Sources */,
 				CD6966712BBBC5DF00B082C4 /* SettingsView.swift in Sources */,
+				CD78759D2BD785930086775B /* HighScoreModel.swift in Sources */,
 				CD6966732BBBC60800B082C4 /* HighScoreView.swift in Sources */,
+				CD78759F2BD786280086775B /* GamePropertiesModel.swift in Sources */,
 				CD6966492BBBC23000B082C4 /* ContentView.swift in Sources */,
 				CD6966472BBBC23000B082C4 /* BubblePopApp.swift in Sources */,
+				CD78759B2BD7856F0086775B /* BubbleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

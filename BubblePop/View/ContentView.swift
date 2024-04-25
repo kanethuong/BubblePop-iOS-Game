@@ -7,33 +7,35 @@
 
 import SwiftUI
 
+// Main navigation view
 struct ContentView: View {
+//    @StateObject var gameController = GameController()
+    @EnvironmentObject var gameController: GameController
+    
     var body: some View {
-        NavigationView{
+        NavigationStack {
             VStack {
-                Label("Bubble Pop", systemImage: "")
+                Text("Bubble Pop")
                     .foregroundStyle(.mint)
                     .font(.largeTitle)
-                    
+                
                 Spacer()
                 
-                NavigationLink(
-                    destination: SettingsView(),
-                    label: {
-                        Text("New Game")
-                            .font(.title)
-                    })
-                .padding(50)
+                NavigationLink(destination: SettingsView()) {
+                    Text("New Game")
+                        .font(.title)
+                }
+                .padding()
                 
-                NavigationLink(
-                    destination: HighScoreView(),
-                    label: {
-                        Text("High Score")
-                            .font(.title)
-                    })
+                NavigationLink(destination: HighScoreView()) {
+                    Text("High Score")
+                        .font(.title)
+                }
+                .padding()
+                
                 Spacer()
             }
-            .padding()
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
@@ -41,3 +43,4 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct BubblePopApp: App {
+    // Create a single instance of GameController to share across views
+    @StateObject private var gameController = GameController()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(gameController) // Inject the shared GameController instance
         }
     }
 }

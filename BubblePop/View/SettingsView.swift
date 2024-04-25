@@ -7,48 +7,63 @@
 
 import SwiftUI
 
+// View for game settings
 struct SettingsView: View {
-    @StateObject var highScoreViewModel = HighScoreViewModel()
-    @State private var countdownInput = ""
-    @State private var countdownValue: Double = 0
-    @State private var numberOfBubbles: Double = 0
+    @EnvironmentObject var gameController: GameController // Use the shared instance
+    
     var body: some View {
-            VStack{
-                Label("Settings", systemImage: "")
-                    .foregroundStyle(.green)
+        VStack {
+            
+            Text("Enter Your Name:")
+                .font(.title)
+            
+            TextField("Name", text: $gameController.gameProperties.playerName)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            
+            Text("Game Time (seconds)")
+            Slider(
+                value: $gameController.gameProperties.gameTime,
+                   in: 10...60, step: 10) // Adjustable game time
+                .padding()
+            Text("\(Int(gameController.gameProperties.gameTime))")
+            
+            Text("Max Bubbles").padding()
+            Slider(
+                value: Binding(
+                    get: { Double(gameController.gameProperties.maxBubbles) }, // Convert to Double
+                    set: { gameController.updateMaxBubbles(Int($0)) } // Convert back to Int
+                ),
+                in: 1...15, // Range for max bubbles
+                step: 1 // Step for the slider
+            ) // Adjustable max bubbles
+                .padding()
+            Text("\(Int(gameController.gameProperties.maxBubbles))")
+            
+            NavigationLink(destination: StartGameView()) {
+                Text("Start Game")
                     .font(.title)
-                    Spacer()
-                Text("Enter Your Name:")
-                
-                TextField("Enter Name", text: $highScoreViewModel.taskDescription)
-                    .padding()
-                    Spacer()
-                Text("Game Time")
-                Slider(value: $countdownValue, in: 0...60, step: 1)
-                    .padding()
-                    .onChange(of: countdownValue, perform: { value in
-                        countdownInput = "\(Int(value))"
-                    })
-                Text(" \(Int(countdownValue))")
-                    .padding()
-
-                Text("Max Number of Bubbles")
-                Slider(value: $numberOfBubbles, in: 0...15, step: 1)
-                    .padding()
-                                
-                Text("\(Int(numberOfBubbles))")
-                                    .padding()
-                NavigationLink(
-                    destination: StartGameView(),
-                    label: {
-                        Text("Start Game")
-                            .font(.title)
-                    })
-                Spacer()
-                
             }
+            .padding()
+            
+            NavigationLink(destination: ContentView()) {
+                Text("Back to menu")
+                    .font(.title)
+            }
+            .padding()
         }
+        .onAppear {
+            // Default settings, could also read from a persistent source
+        }
+        .navigationBarBackButtonHidden(true)
+    }
 }
-#Preview {
-    SettingsView()
+
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        let gameController = GameController()  // Create the required environment object
+        
+        SettingsView()
+            .environmentObject(gameController)  // Provide the environment object to the preview
+    }
 }

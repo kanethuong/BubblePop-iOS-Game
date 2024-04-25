@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HighScore {
-    var value: Int
+struct HighScore:Codable {
+    var score: Int
     var name: String
 }

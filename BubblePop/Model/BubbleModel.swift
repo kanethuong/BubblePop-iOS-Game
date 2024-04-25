@@ -10,6 +10,8 @@ import SwiftUI
 
 struct Bubble: Identifiable {
     let id = UUID()
-    let color: Color
-    let points: Int
+    var color: Color
+    var points: Int
+    var position: CGPoint
+    var direction: CGPoint
 }

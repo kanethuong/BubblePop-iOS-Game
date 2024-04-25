@@ -6,9 +6,29 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
-struct GameProperties {
-    var gameTime: TimeInterval
-    var score: Int
-    var highScore: HighScore
+class GameProperties: ObservableObject{
+//    @Published var gameTime: TimeInterval
+//    @Published var score: Int
+//    var highScores: [HighScore]
+//    var maxBubbles: Int
+//    @Published var playerName: String
+    
+    @Published var gameTime = TimeInterval(60)
+    @Published var score = Int(15)
+    var highScores: [HighScore] = []
+    var maxBubbles = 0
+    @Published var playerName = ""
+    
+    static let shared: GameProperties = GameProperties()
+    
+//    init(gameTime: TimeInterval = 60, highScores: [HighScore] = [], maxBubbles: Int = 15) {
+//        self.gameTime = gameTime
+//        self.score = 0
+//        self.highScores = highScores
+//        self.maxBubbles = maxBubbles
+//        self.playerName = ""
+//    }
 }

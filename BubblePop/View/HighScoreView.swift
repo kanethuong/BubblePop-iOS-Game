@@ -9,15 +9,14 @@ import SwiftUI
 
 // View for displaying high scores
 struct HighScoreView: View {
-    // Placeholder data for high scores, would typically come from a database or persistent storage
-    @EnvironmentObject var gameController: GameController
+    @ObservedObject var gameController: GameController
     
     var body: some View {
         VStack {
-            Text("High Scores")
+            Text("Score Board")
                 .font(.title)
+                .padding()
             
-//            let _=print($gameController.gameProperties.highScores)
             List($gameController.gameProperties.highScores, id: \.name) { highScore in
                 HStack {
                     Text(highScore.name.wrappedValue)
@@ -26,15 +25,14 @@ struct HighScoreView: View {
                 }
             }
             
-            Spacer()
-            
             NavigationLink(destination: ContentView()) {
                 Text("Back to menu")
-                    .font(.title)
+                    .font(.title2)
             }
             .padding()
             
-            Button("Reset High Score"){gameController.resetHighScore()}
+            
+            Button("Reset Score Board"){gameController.resetHighScore()}.font(.title2)
             
             Spacer()
         }
@@ -42,16 +40,6 @@ struct HighScoreView: View {
             gameController.loadHighScores()
         }
         .navigationBarBackButtonHidden(true)
-    }
-}
-
-
-struct HighScoreView_Previews: PreviewProvider {
-    static var previews: some View {
-        let gameController = GameController()  // Create the required environment object
         
-        HighScoreView()
-            .environmentObject(gameController)  // Provide the environment object to the preview
     }
 }
-

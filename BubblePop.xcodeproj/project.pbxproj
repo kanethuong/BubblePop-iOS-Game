@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94BE04722BDBAB76004F3261 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE04712BDBAB76004F3261 /* CountdownView.swift */; };
+		94BE04742BDBB64C004F3261 /* TrapBubbleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE04732BDBB64C004F3261 /* TrapBubbleModel.swift */; };
 		94D001132BD89983003ECDB1 /* StartGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D001122BD89983003ECDB1 /* StartGameView.swift */; };
 		94D001152BD899EC003ECDB1 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D001142BD899EC003ECDB1 /* GameController.swift */; };
 		CD6966472BBBC23000B082C4 /* BubblePopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6966462BBBC23000B082C4 /* BubblePopApp.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		94BE04712BDBAB76004F3261 /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		94BE04732BDBB64C004F3261 /* TrapBubbleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrapBubbleModel.swift; sourceTree = "<group>"; };
 		94D001122BD89983003ECDB1 /* StartGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameView.swift; sourceTree = "<group>"; };
 		94D001142BD899EC003ECDB1 /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameController.swift; path = BubblePop/Controller/GameController.swift; sourceTree = SOURCE_ROOT; };
 		CD6966432BBBC23000B082C4 /* BubblePop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BubblePop.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +154,7 @@
 				CD6966702BBBC5DF00B082C4 /* SettingsView.swift */,
 				CD6966722BBBC60800B082C4 /* HighScoreView.swift */,
 				94D001122BD89983003ECDB1 /* StartGameView.swift */,
+				94BE04712BDBAB76004F3261 /* CountdownView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				CD78759A2BD7856F0086775B /* BubbleModel.swift */,
 				CD78759C2BD785930086775B /* HighScoreModel.swift */,
 				CD78759E2BD786280086775B /* GamePropertiesModel.swift */,
+				94BE04732BDBB64C004F3261 /* TrapBubbleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,6 +314,8 @@
 				CD78759D2BD785930086775B /* HighScoreModel.swift in Sources */,
 				CD6966732BBBC60800B082C4 /* HighScoreView.swift in Sources */,
 				CD78759F2BD786280086775B /* GamePropertiesModel.swift in Sources */,
+				94BE04742BDBB64C004F3261 /* TrapBubbleModel.swift in Sources */,
+				94BE04722BDBAB76004F3261 /* CountdownView.swift in Sources */,
 				CD6966492BBBC23000B082C4 /* ContentView.swift in Sources */,
 				CD6966472BBBC23000B082C4 /* BubblePopApp.swift in Sources */,
 				CD78759B2BD7856F0086775B /* BubbleModel.swift in Sources */,

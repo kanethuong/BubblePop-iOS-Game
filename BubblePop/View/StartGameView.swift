@@ -9,8 +9,7 @@ import SwiftUI
 
 // View for starting a new game and entering player name
 struct StartGameView: View {
-//    @ObservedObject var gameController : GameController
-    @EnvironmentObject var gameController: GameController // Use the shared instance
+    @ObservedObject var gameController: GameController
     
     var body: some View {
         VStack {
@@ -18,7 +17,8 @@ struct StartGameView: View {
                 Text("Score: \(gameController.gameProperties.score)")
                 Text("High Score: \(String(describing: gameController.getHighScore(for: $gameController.gameProperties.playerName.wrappedValue) ?? 0))")
                 Text("Time Left: \(Int(gameController.gameProperties.gameTime))s")
-            }.padding()
+            }
+            .padding()
             
             
             ZStack {
@@ -31,31 +31,35 @@ struct StartGameView: View {
                             gameController.popBubble(bubble: bubble)
                         }
                 }
+                
+                ForEach(gameController.traps) { trap in
+                    Circle()
+                        .frame(width: trap.size, height: trap.size)
+                        .position(x: trap.position.x, y: trap.position.y)
+                        .foregroundColor(.indigo)
+                        .onTapGesture {
+                            gameController.popTrap(trap)
+                        }
+                }
             }
             Spacer()
             
-            NavigationLink(
-                destination: HighScoreView(),  // Navigate to HighScoreView
-                isActive: $gameController.gameEnded  // Trigger navigation
-            ) {
-                EmptyView()
+            NavigationLink(value: gameController.gameEnded) {  // Link to high score view
+                EmptyView()  // Invisible link to trigger navigation
             }
         }
         .onAppear {
             gameController.startGame() // Start the game on view appearance
         }
-        .onDisappear(perform: {
-            gameController.endGame()
-        })
+        .navigationDestination(isPresented: $gameController.gameEnded) {  // Define the destination when navigation is triggered
+            HighScoreView(gameController: self.gameController)  // The high score view
+        }
         .navigationBarBackButtonHidden(true)
     }
 }
 
 struct StartGameView_Previews: PreviewProvider {
     static var previews: some View {
-        let gameController = GameController()  // Create the required environment object
-        
-        StartGameView()
-            .environmentObject(gameController)  // Provide the environment object to the preview
+        StartGameView(gameController: GameController())
     }
 }

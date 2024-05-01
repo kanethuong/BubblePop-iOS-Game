@@ -7,27 +7,27 @@
 
 import SwiftUI
 
-// Main navigation view
+// Main content view for the BubblePop game application
 struct ContentView: View {
-//    @StateObject var gameController = GameController()
-    @EnvironmentObject var gameController: GameController
+    @State private var gameController = GameController()
     
     var body: some View {
+        // A navigation stack to handle transitions between views
         NavigationStack {
-            VStack {
+            VStack { // Vertical stack layout for the content
                 Text("Bubble Pop")
                     .foregroundStyle(.mint)
                     .font(.largeTitle)
                 
                 Spacer()
                 
-                NavigationLink(destination: SettingsView()) {
+                NavigationLink(destination: SettingsView(gameController: self.gameController)) {
                     Text("New Game")
                         .font(.title)
                 }
                 .padding()
                 
-                NavigationLink(destination: HighScoreView()) {
+                NavigationLink(destination: HighScoreView(gameController: self.gameController)) {
                     Text("High Score")
                         .font(.title)
                 }
@@ -35,6 +35,7 @@ struct ContentView: View {
                 
                 Spacer()
             }
+            // Hide the back button in the navigation bar
             .navigationBarBackButtonHidden(true)
         }
     }

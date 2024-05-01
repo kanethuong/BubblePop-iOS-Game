@@ -13,5 +13,4 @@ struct Bubble: Identifiable {
     var color: Color
     var points: Int
     var position: CGPoint
-    var direction: CGPoint
 }
